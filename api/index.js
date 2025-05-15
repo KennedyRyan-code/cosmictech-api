@@ -49,9 +49,9 @@ connectToDB();
 // module.exports = serverless(app);
 
 //  local development
-if (process.env.NODE_ENV === "development") {
-  const PORT = process.env.PORT || 10000;
-  app.listen(PORT, () => {
-    console.log(`Server running locally on port ${PORT}`);
-  });
-}
+
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => {
+  console.log(`Server running locally on port ${PORT}`);
+});
+
