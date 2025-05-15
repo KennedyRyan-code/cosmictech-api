@@ -51,8 +51,8 @@ module.exports = serverless(app);
 
 //  local development
 if (process.env.NODE_ENV === "development") {
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT,"0.0.0.0", () => {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
     console.log(`Server running locally on port ${PORT}`);
   });
 }
