@@ -2,8 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
-const serverless = require("serverless-http");
-
+// const serverless = require("serverless-http"); // Uncomment if using Vercel Serverless Function
 const blogRoute = require("./routes/blogs");
 const collabRoute = require("./routes/collaborate");
 const joinUsRoute = require("./routes/joinUs");
@@ -46,12 +45,12 @@ async function connectToDB() {
 }
 connectToDB();
 
-// Vercel Serverless Function
-module.exports = serverless(app);
+// // Vercel Serverless Function
+// module.exports = serverless(app);
 
 //  local development
 if (process.env.NODE_ENV === "development") {
-  const PORT = process.env.PORT || 3000;
+  const PORT = process.env.PORT || 10000;
   app.listen(PORT, () => {
     console.log(`Server running locally on port ${PORT}`);
   });
